@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/yoel/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -14,7 +14,7 @@ ZSH_THEME="agnoster"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
-ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.mycommands.sh
-source ~/notifier-scripts/notifier.sh
+# source ~/notifier-scripts/notifier.sh
 
 alias dist="python3 code/dist.py"
 alias uwu="ssh -i ~/.ssh/google_compute_engine yoel@34.74.176.91"
@@ -109,10 +109,10 @@ alias spot='spotifyd --config-path ~/.config/spotifyd/spotifyd.conf --no-daemon'
 alias rm='rm -i'
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/yoel/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yoel/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/yoel/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yoel/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"; fi
 
 # Display username and hostname in ohmyzsh
 # PROMPT="$fg_bold[blue]%}@%{$fg_bold[blue]%}%m ${PROMPT}"
@@ -123,14 +123,14 @@ export NVM_DIR="$HOME/.nvm"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/yoel/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$(\"$HOME/opt/anaconda3/bin/conda\" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/yoel/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/yoel/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/opt/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/yoel/opt/anaconda3/bin:$PATH"
+        export PATH="$HOME/opt/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -144,3 +144,6 @@ prompt_context() {
 #    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+
+# Syntax highlighting for man pages using bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"

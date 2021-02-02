@@ -1,0 +1,18 @@
+[user]
+	name = yoelio
+	email = 43119219+Yoelio@users.noreply.github.com
+[core]
+	autocrlf = false
+	safecrlf = true
+	excludesfile = /Users/yoel/.gitignore_global
+[alias]
+	last = log -1 HEAD
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	unstage = reset HEAD --
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	contribs = shortlog -sn --all
+[credential]
+	helper = osxkeychain

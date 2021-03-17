@@ -4,6 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export EDITOR=vim
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -68,7 +70,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zbell)
+plugins=(git zsh-autosuggestions zbell zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,6 +110,7 @@ alias ql='qlmanage -p "$@" &>/dev/null'
 alias spot='spotifyd --config-path ~/.config/spotifyd/spotifyd.conf --no-daemon'
 alias rm='rm -i'
 
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"; fi
 
@@ -137,8 +140,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-eval $(thefuck --alias)
-
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
 #    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
@@ -147,3 +148,6 @@ prompt_context() {
 
 # Syntax highlighting for man pages using bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export PATH="/usr/local/opt/avr-gcc@8/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

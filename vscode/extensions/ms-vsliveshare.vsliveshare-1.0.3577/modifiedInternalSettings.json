@@ -2,6 +2,6 @@
 	"whatsNewUri": "",
 	"isInternal": false,
 	"canCollectPII": false,
-	"nativeAuthFlow": false,
+	"nativeAuthFlow": true,
 	"showLauncherError": true
 }

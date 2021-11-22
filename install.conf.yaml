@@ -18,12 +18,17 @@
     #- ~/downloads
     #- ~/.vim/undo-history
 
+# Note: Install Homebrew before running ./install
+      
 - shell:
 #     # - [git submodule update --init --recursive, Installing submodules]
     - [sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing oh-my-zsh]
-    - [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)", Installing Homebrew]
-    - [git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions, Installing zsh-autosuggestions]
-    - [git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting, Installing zsh-syntax-highlighting]
+#    - [git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions, Installing zsh-autosuggestions]
+#    - [git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting, Installing zsh-syntax-highlighting]
+    - [git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z, Installing zsh-z plugin]
+    - [brew install bat, Installing bat]
     - [brew install --cask visual-studio-code, Installing VSCode]
     - [brew install --cask spotify, Installing Spotify]
     - [brew install --cask iterm2, Installing iTerm2]
+    - [brew install --cask firefox, Installing Firefox]
+    - [defaults write com.apple.dock autohide-delay -int 0 && defaults write com.apple.dock autohide-time-modifier -float 0.4 && killall Dock, Improving Dock]
